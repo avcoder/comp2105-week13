@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <title>WebSlides: Making HTML presentations easy</title>
+  <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features.">
+
+  <!-- URL CANONICAL -->
+  <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+    rel="stylesheet">
+
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type='text/css' media='all' href="././static/css/webslides.css">
+
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="./static/css/svg-icons.css">
+
+  <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+  <!-- FACEBOOK -->
+  <meta property="og:url" content="http://your-url.com/">
+  <!-- YOUR URL -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WebSlides — Making HTML Presentations Easy">
+  <!-- EDIT -->
+  <meta property="og:description" content="WebSlides is about telling stories beautifully. Just the essential features. Good karma.">
+  <!-- EDIT -->
+  <meta property="og:updated_time" content="2017-01-04T17:20:50">
+  <!-- EDIT -->
+  <meta property="og:image" content="./static/images/share-webslides.jpg">
+  <!-- EDIT -->
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@webslides">
+  <!-- EDIT -->
+  <meta name="twitter:creator" content="@jlantunez">
+  <!-- EDIT -->
+  <meta name="twitter:title" content="WebSlides — Making HTML Presentations Easy">
+  <!-- EDIT -->
+  <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use.">
+  <!-- EDIT -->
+  <meta name="twitter:image" content="./static/images/share-webslides.jpg">
+  <!-- EDIT -->
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" sizes="16x16" href="./static/images/favicons/favicon.png">
+  <link rel="shortcut icon" sizes="32x32" href="./static/images/favicons/favicon-32.png">
+  <link rel="apple-touch-icon icon" sizes="76x76" href="./static/images/favicons/favicon-76.png">
+  <link rel="apple-touch-icon icon" sizes="120x120" href="./static/images/favicons/favicon-120.png">
+  <link rel="apple-touch-icon icon" sizes="152x152" href="./static/images/favicons/favicon-152.png">
+  <link rel="apple-touch-icon icon" sizes="180x180" href="./static/images/favicons/favicon-180.png">
+  <link rel="apple-touch-icon icon" sizes="192x192" href="./static/images/favicons/favicon-192.png">
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#333333">
+  <style>
+    input[type=range] {
+      -webkit-appearance: none;
+      background: #333;
+      border: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 16px;
+      width: 120px;
+      background: lime;
+      margin-top: -4px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      border: none;
+      height: 16px;
+      width: 120px;
+      background: lime;
+      margin-top: -4px;
+      border-radius: 0;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+</head>
+
+<body>
+  <header role="banner">
+    <nav role="navigation">
+      <p class="logo">
+        <a href="index.html" title="WebSlides">WebSlides</a>
+      </p>
+      <ul>
+        <li class="github">
+          <a rel="external" href="https://github.com/avcoder/comp2105-week13" title="Github">
+            <svg class="fa-github">
+              <use xlink:href="#fa-github"></use>
+            </svg>
+            <em>WebSlides</em>
+          </a>
+        </li>
+        <li class="twitter">
+          <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+            <svg class="fa-twitter">
+              <use xlink:href="#fa-twitter"></use>
+            </svg>
+            <em>@WebSlides</em>
+          </a>
+        </li>
+        <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <article id="webslides" class="horizontal">
+      <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+
+      <section>
+        <!-- Credit: image from unsplash.com -->
+        <span
+            class="background"
+            style="background-image:url('./static/images/animationmap2.jpg'); filter: opacity(.3);"
+          ></span>
+
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h1>
+            <strong>Intro to Augmented Reality</strong>
+          </h1>
+          <p class="text-intro">Week 13
+            <br/>COMP 2105
+
+          </p>
+          <p>
+            <a href="https://github.com/avcoder/comp2105-week13" class="button zoomIn" title="Download WebSlides for free">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              Class Notes
+            </a>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <img
+            src="./static/images/animationmap.jpg"
+            alt="The world of web animation by Val head"
+            style="width: 80%"
+          />
+          <p>
+            <a
+              href="https://noti.st/valhead/L9LBoQ/choose-your-web-animation-adventure"
+              >https://noti.st/valhead/L9LBoQ/choose-your-web-animation-adventure</a
+            >
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-50 aligncenter">
+          <h2>
+            <strong>To Do Today:</strong>
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock reasons">
+              <li>
+                <h2>AR History
+                </h2>
+                <p>
+                    Become familiar with the history of augmented reality to where we are today
+                </p>
+              </li>
+              <li>
+                <h2>AR Libraries</h2>
+                <p>Become familiar with some of the technologies/software responsible for building augmented reality</p>
+              </li>
+              <li>
+                <h2>CSS Performance</h2>
+                <p>A deeper look at why transform and opacity are the 2 best properties to animate</p>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>What is Augmented Reality?</h2>
+          <img style="width: 1400px" src="./static/images/reality_continuum.png" alt="Reality to Virtual Reality continuum">
+        </div>
+        <p class="text-intro">Augmented reality (AR) is a live direct or indirect view of a physical, real-world environment whose elements are
+          augmented (or supplemented) by computer-generated sensory input such as sound, video, graphics or GPS data</p>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="content-left">
+            <h3>
+              Ikea Place App
+            </h3>
+
+          </div>
+          <!-- end .content-left -->
+          <div class="content-left">
+            <!-- <div class="embed"> = Responsive -->
+            <div class="embed">
+              <div data-youtube data-youtube-id="4jrhw_ZRjV4" data-autoplay data-no-controls></div>
+            </div>
+            <!-- end .embed -->
+          </div>
+          <!-- end .content-left -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="content-left">
+            <h3>
+              ar.js - gaming
+            </h3>
+            <p>
+              <a href="https://www.youtube.com/watch?v=OzLJb7HitvA#t=1m20s">Forward to 1:20</a>
+            </p>
+
+          </div>
+          <!-- end .content-left -->
+          <div class="content-left">
+            <!-- <div class="embed"> = Responsive -->
+            <div class="embed">
+              <div data-youtube data-youtube-id="OzLJb7HitvA#t=1m20s" data-autoplay data-no-controls></div>
+            </div>
+            <!-- end .embed -->
+          </div>
+          <!-- end .content-left -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>AR in education</h2>
+          <img style="" src="./static/images/education.png" alt="ar in education">
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <img style="width: 800px" src="./static/images/arapps.png" alt="ar for the industry, medical training, commerce ads and shops">
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <img src="./static/images/wave4.jpg" alt="ar/vr is the 4th wave of computing" style="margin-top: -100px">
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <img src="./static/images/cycle.png" alt="ar/vr is the 4th wave of computing"style="margin-top: -100px">
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="bg-facebook">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>ar.js - created by Jerome Etienne in early 2017</h2>
+          <p class="text-intro">AR.js : The Mission - Bringing AR to the Web</p>
+          <ul class="flexblock features">
+            <li>runs very fast, supports Android, iOS and Windows phones</li>
+            <li>pure web solution / no installation required</li>
+            <li>Open Source</li>
+            <li>Works on any modern browser with WebGL &amp; WebRTC</li>
+            <li>full javascript</li>
+            <li>based on three.js + jsartoolkit5</li>
+          </ul>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>June 2017 - Apple created ARKit</h2>
+          <img style="width: 500px" src="./static/images/arkit1.png" alt="ARKit - Build unparalleled augmented reality experiences for hundreds of millions of users on iOS 11 — the biggest AR platform in the world. ARKit blends digital objects and information with the environment around you, taking apps far beyond the screen and freeing them to interact with the real world in entirely new ways.">
+          <ul class="flexblock features">
+            <li>markerless tracking</li>
+            <li>ability to do HIT testing on the real world</li>
+            <li>available on monocular camera</li>
+          </ul>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>monocular camera - Hololens by Microsoft</h2>
+          <img style="width: 50%;" src="./static/images/hololens.jpg" alt="Hololens by Microsoft">
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>August 2017 - Google replied with ARCore</h2>
+          <img style="width: 50%" src="./static/images/arcore1.png" alt="ARCore is a platform for building augmented reality apps on Android by using motion tracking, environmental understanding, light estimation.">
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-blue">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-50 aligncenter">
+          <h2>
+            <strong>Google's ARCore vs. Apple's ARKit</strong>
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock specs">
+              <li class="text-intro">Now both major vendors had good AR support
+              </li>
+              <li class="text-intro">Apple no longer had a monopoly on AR
+              </li>
+              <li class="text-intro">Both competing with each other is good news for the AR world
+              </li>
+            </ul>
+          </div>
+          <p class="text-intro">However, both ARKit and ARCore were native implementations for their respective phones and not something you can
+            easily reach from the web.</p>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>Google exposed AR on the Web via:</h2>
+          <div class="grid vertical-align">
+
+            <div class="column">
+              <h3>WebARonARCore</h3>
+              <img src="./static/images/arcore1.gif" alt="arcore">
+            </div>
+            <div class="column">
+              <h3>WebARonARKit</h3>
+              <img src="./static/images/arkit1.gif" alt="arkit">
+            </div>
+          </div>
+          <p class="text-intro">In addition, today you now have Microsoft's ChakraCore, Facebook's AR Studio and React 360</p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>ARCore example</h2>
+          <img style="height: 300px" src="./static/images/portal.png" alt="portal using ARCore">
+          <p>
+            <a href="https://twitter.com/builtwithARCore/status/908272660605534208">https://twitter.com/builtwithARCore/status/908272660605534208</a>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>ARCore example</h2>
+          <img style="height: 300px" src="./static/images/drones.png" alt="drones using ARCore">
+          <p>
+            <a href="https://twitter.com/builtwithARCore/status/915952028957990912">https://twitter.com/builtwithARCore/status/915952028957990912</a>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-facebook">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>As a response, ar.js has evolved</h2>
+          <ul class="flexblock features">
+            <li class="text-intro">ar.js is made available to the A-Frame API</li>
+            <li class="text-intro">ar.js is also made available via babylon.js</li>
+            <li class="text-intro">It supports ARcore and ARkit</li>
+            <li class="text-intro">On ARcore, AR.js will use ARcore tracking</li>
+            <li class="text-intro">On ARkit, AR.js will use ARkit tracking</li>
+            <li class="text-intro">On a normal phone, AR.js will use pure-web tracking</li>
+          </ul>
+          <p class="text-intro">This means you have one source for all platforms</p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>ar.js example</h2>
+          <img style="height: 300px;" src="./static/images/duck.png" alt="duck swimming using ar.js">
+          <p>
+            <a href="https://twitter.com/jerome_etienne/status/846751371185541121">https://twitter.com/jerome_etienne/status/846751371185541121</a>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>
+            A-Frame
+          </h2>
+          <img style="height: 300px;" src="./static/images/aframe.png" alt="three.js">
+          <p>
+            <a href="https://aframe.io/examples/showcase/snowglobe/">https://aframe.io/examples/showcase/snowglobe/</a>
+          </p>
+          <p class="text-intro">A-Frame is built on top of WebGL, Three.js and custom elements.</p>
+
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+
+      <section class="bg-green">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>tracking</h2>
+          <ul class="flexblock gallery">
+            <li class="text-intro">
+              <figure>
+                <img src="./static/images/mini.jpg" alt="mini AR ad">
+                <figcaption style="color: #000">AR markers</figcaption>
+              </figure>
+            </li>
+            <li class="text-intro">
+              <figure>
+                <img src="./static/images/pokemon.png" alt="mini AR ad">
+                <figcaption style="color: #000">Geo Tracking</figcaption>
+              </figure>
+            </li>
+            <li class="text-intro">
+              <figure>
+                <img src="./static/images/snapchat.png" alt="snapchat">
+                <figcaption style="color: #000">Face Tracking</figcaption>
+              </figure>
+            </li>
+          </ul>
+          <ul class="flexblock features">
+            <li class="text-intro">Colour tracking</li>
+            <li class="text-intro">Object tracking</li>
+          </ul>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap">
+          <div class="grid vertical-align">
+
+            <div class="column" style="width: 30%">
+                <p class="codepen" data-height="500" data-theme-id="0" data-default-tab="html,result" data-user="avcoder" data-slug-hash="RMjXRg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="ar">
+                    <span>See the Pen <a href="https://codepen.io/avcoder/pen/RMjXRg/">
+                    ar</a> by A.V. (<a href="https://codepen.io/avcoder">@avcoder</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
+            <!-- .end .column -->
+            <div class="column" style="width: 70%">
+              <h3>
+                Intro to ar.js and A-frame
+              </h3>
+ <p class="text-intro">Include following scripts:</p>
+ <pre><code><h6>
+&lt;script src="https://aframe.io/releases/0.7.1/aframe.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;script&gt;THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'&lt;/script&gt;
+</h6></code></pre>
+            </div>
+            <!-- .end .column -->
+          </div>
+          <!-- .end .grid -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter size-70">
+            <h3>Step 1 - Add a scene after the <code>&lt;body&gt;</code> tag</h3>
+            <pre><code><h4>
+&lt;a-scene embedded artoolkit='sourceType: webcam;'&gt;
+
+
+
+&lt;/a-scene&gt;
+            </h4></code></pre>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter size-70">
+          <h3>Step 2 - Add a marker-camera</h3>
+          <pre><code><h4>
+&lt;a-scene embedded artoolkit='sourceType: webcam;'&gt;
+    
+
+  &lt;a-marker-camera preset='hiro'&gt;&lt;/a-marker-camera&gt;
+&lt;/a-scene&gt;
+          </h4></code></pre>
+            <p><a href="http://tiny.cc/hiro">http://tiny.cc/hiro</a></p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter size-70">
+            <h3>Step 3 - Add a box object</h3>
+            <pre><code><h4>
+&lt;a-scene embedded artoolkit='sourceType: webcam;'&gt;
+  &lt;a-box position='0 0.5 0' &gt;&lt;/a-box&gt;
+
+  &lt;a-marker-camera preset='hiro'&gt;&lt;/a-marker-camera&gt;
+&lt;/a-scene&gt;
+            </h4></code></pre>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-apple">
+            <!--.wrap = container (width: 90%) -->
+            <div class="wrap aligncenter size-70">
+              <h3>Step 4 - Show marker to webcam</h3>
+              <p><a href="http://tiny.cc/hiro">http://tiny.cc/hiro</a></p>
+
+<img src="./static/images/hiro.png" alt="hiro image">
+
+            </div>
+            <!-- .end .wrap -->
+          </section>
+
+          <section class="bg-apple">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap aligncenter size-50">
+                <h3>Can I change the colour?</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">MDN: setAttribute()</a></p>
+  <!-- 
+    const box = document.querySelector('a-box');
+box.setAttribute('color', 'green'); 
+box.setAttribute('opacity', 0.5);
+  -->
+              </div>
+              <!-- .end .wrap -->
+            </section>
+
+
+            <section class="bg-apple">
+                <!--.wrap = container (width: 90%) -->
+                <div class="wrap aligncenter size-50">
+                  <h3>Can I change the opacity?</h3>
+  <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">MDN: setAttribute()</a></p>
+    <!-- 
+      const box = document.querySelector('a-box');
+  box.setAttribute('color', 'green'); 
+  box.setAttribute('opacity', 0.5);
+    -->
+                </div>
+                <!-- .end .wrap -->
+              </section>
+  
+              <section class="bg-apple">
+                  <!--.wrap = container (width: 90%) -->
+                  <div class="wrap aligncenter size-80">
+                    <h3>In-class exercise 13</h3>
+                    <p class="text-intro">Try adding these objects in your scene:</p>
+                    <ul class="flexblock specs text-intro">
+                        <li>&lt;a-sphere position="0 0.5 0" radius=".25" color="#EF2D5E"&gt;&lt;/a-sphere&gt;</li>
+                        <li>&lt;a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"&gt;&lt;/a-cylinder&gt;</li>
+                        <li>&lt;a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"&gt;&lt;/a-plane&gt;</li>
+                        <li>&lt;a-text value="hello world"&gt;&lt;/a-text&gt;</li>
+                        <li>&lt;a-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png"&gt;&lt;/a-image&gt;</li>
+                
+                      </ul>
+                      <p class="text-intro">Try tweaking its attributes such as: position, radius, etc. (or add your own image)</p>
+                      <p class="text-intro"><b>Take a screenshot of your creation and submit it on blackboard</b></p>
+                  </div>
+                  <!-- .end .wrap -->
+                </section>
+
+
+
+<section class="bg-secondary">
+    <!--.wrap = container (width: 90%) -->
+    <div class="wrap size-70 frame">
+      <h2 class="text-serif aligncenter">
+        Submit <br>in-class exercise 13 + break<br>
+        (5 mins) + (20 mins) 
+      </h2>
+      <p class="aligncenter">
+        <a href="http://avillaruz.computerstudi.es/comp2105/index.html">Start timer</a>
+      </p>
+      <p class="text-symbols">* * *</p>
+      <h4>More Stuff</h4>
+<ul>
+  <li><a href="./static/images/logic.gif">Symbolic Logic and Minesweeper</a></li>
+  <li>
+      <a href="https://medium.com/swlh/how-to-build-a-startup-without-quitting-your-day-job-9f5bbf7a1a2b">Building a startup without quitting your day job</a>
+    </li>
+    <li>
+      <a href="https://twitter.com/Real_CSS_Tricks/status/989202385363877888">web-based tool for creating stunning and engaging motion comics</a>
+    </li>
+
+</ul>
+
+    </div>
+  </section>
+
+      <section class="">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <h2>three.js</h2>
+            <img style="width: 400px" src="./static/images/threejs.png" alt="three.js">
+            <p>
+              <a href="https://threejs.org/">https://threejs.org/</a>
+            </p>
+  <p><a href="https://aframe.io/docs/0.8.0/introduction/developing-with-threejs.html">Developing with three.js</a></p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="">
+            <!--.wrap = container (width: 90%) -->
+            <div class="wrap aligncenter">
+              <h2>Glossary</h2>
+              <p>
+                <a href="https://next.reality.news/how-to/quick-dirty-guide-augmented-reality-terms-you-need-know-0182665/">The Quick & Dirty Guide to the Augmented Reality Terms You Need to Know</a>
+              </p>
+              <p><a href="http://www.techtimes.com/articles/221529/20180221/you-ll-now-start-seeing-3d-content-on-your-facebook-newsfeed.htm">3D content on facebook</a></p>
+            </div>
+            <!-- .end .wrap -->
+          </section>
+
+          <section>
+              <div class="wrap">
+                <div class="content-left">
+                  <h3>
+                    webxr.io
+                  </h3>
+                  <p>Watch this 6 minute video about what else ar.js can do through this GUI web playground</p>
+      <p>Play with <a href="http://webxr.io">webxr.io</a> for the next 15 minutes</p>
+      
+                </div>
+                <!-- end .content-left -->
+                <div class="content-left">
+                  <!-- <div class="embed"> = Responsive -->
+                  <div class="embed">
+                    <div data-youtube data-youtube-id="NyZ_dAlNBOI" data-autoplay data-no-controls></div>
+                  </div>
+                  <!-- end .embed -->
+                </div>
+                <!-- end .content-left -->
+              </div>
+              <!-- .end .wrap -->
+            </section>
+          
+
+
+
+
+
+
+
+
+
+
+          <section class="">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap aligncenter">
+                <h2>Paper Programs</h2>
+                <p><a href="https://paperprograms.org/">https://paperprograms.org/</a>
+                </p>
+              </div>
+              <!-- .end .wrap -->
+            </section>
+
+
+            <section class="bg-purple">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap aligncenter">
+                <h2>To visually update any change on the page, the browser might do:</h2>
+                <ul class="flexblock features">
+                  <li>
+                    <h3>Layout</h3>
+                    <p>Generates the geometry and position of each element</p>
+                  </li>
+                  <li>
+                    <h3>Paint</h3>
+                    <p>Fills out the pixels for each element into the layers that make up the page</p>
+                  </li>
+                  <li>
+                    <h3>Composite</h3>
+                    <p>Draws the layers out onto the screen</p>
+                  </li>
+                </ul>
+                <p class="text-intro">Some properties require going through all of these steps each time they're changed, and others don't. The fewer
+                  steps, the better.</p>
+      
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+            <section class="bg-green">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap aligncenter">
+                <h2>Performance</h2>
+                <p class="text-intro">Why are
+                  <b>transform</b> and
+                  <b>opacity</b> the best performing properties to animate?</p>
+                <p class="text-intro">
+                  <a href="https://csstriggers.com/">https://csstriggers.com/</a>
+                </p>
+                <p>What's the performance for properties: top/left, margin and background-position?</p>
+      
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+      
+            <section class="bg-apple">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap size-70">
+                <blockquote class="text-quote">
+                  <p>Conveniently, [transform and opacity] are also the most common properties used in motion design. There aren't
+                    many animated effects that can't be pulled off with this list even though it's a short one</p>
+                  <p>
+                    <cite>
+                      <img class="avatar-56" src="https://pbs.twimg.com/profile_images/669650293747900416/GApkPcFY_bigger.jpg" alt="Avatar">Val Head.
+                      <br/>
+                      <a href="https://www.lynda.com/MyPlaylist/Watch/15095804/461538?autoplay=true">CSS: Animation with Val Head</a>
+                    </cite>
+                  </p>
+                </blockquote>
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+            <section class="bg-apple">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap">
+                <div class="grid vertical-align">
+      
+                  <div class="column">
+                    <p data-height="500" data-theme-id="0" data-slug-hash="jxEvMe" data-default-tab="result" data-user="avcoder" data-embed-version="2"
+                      data-preview="true" data-pen-title="DIY Catwalk(cycle) more performant" class="codepen">See the Pen
+                      <a href="https://codepen.io/avcoder/pen/jxEvMe/">DIY Catwalk(cycle) more performant</a> by A.V. (
+                      <a href="https://codepen.io/avcoder">@avcoder</a>) on
+                      <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                  </div>
+                  <!-- .end .column -->
+                  <div class="column">
+                    <h3>
+                      Make it more performant
+                    </h3>
+                    <p class="text-intro">Replace the background-position with a transform: translateY()</p>
+                    <p>
+                      <a href="http://stash.rachelnabors.com/animation-workshop/sprite_catwalk.png">See sprite</a>
+                    </p>
+                    <pre><code><h4>
+      &lt;div&gt;
+        &lt;img src="sprite.png"&gt;
+      &lt;/div&gt;
+                      </h4></code></pre>
+                    <p>Inspect performance</p>
+                  </div>
+                  <!-- .end .column -->
+                </div>
+                <!-- .end .grid -->
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+            <section class="bg-brown">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap aligncenter">
+                <img src="./static/images/cheap-operations.jpg" alt="4 things the browser can do efficiently">
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+      
+            <section>
+              <div class="wrap">
+                <div class="content-left">
+                  <h3>
+                    Take a look at this side-by-side slow motion video of the same animation:
+                  </h3>
+                  <p>One is done with transforms, the other isn’t. You can see what a difference it makes, so let’s take look at why
+                    that is.</p>
+      
+      
+                </div>
+                <!-- end .content-left -->
+                <div class="content-left">
+                  <!-- <div class="embed"> = Responsive -->
+                  <div class="embed">
+                    <div data-youtube data-youtube-id="-62uPWUxgcg" data-autoplay data-no-controls></div>
+                  </div>
+                  <!-- end .embed -->
+                </div>
+                <!-- end .content-left -->
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+            <section class="bg-facebook">
+              <!--.wrap = container (width: 90%) -->
+              <div class="wrap aligncenter">
+                <p class="text-intro">When you use the Chrome DevTools timeline you should see a pattern similar to this:</p>
+                <img src="./static/images/devtools-waterfall.jpg" alt="chrome devtools">
+                <p>Chrome DevTools frame mode. The higher up the waterfall you start, the more work the browser does.</p>
+              </div>
+              <!-- .end .wrap -->
+            </section>
+      
+            <section class="bg-purple aligncenter">
+              <div class="wrap zoomIn">
+                <h1>
+                  Goto: kahoot.it
+                </h1>
+              </div>
+              <!-- .end .wrap -->
+            </section>
+    
+            
+
+      <section class="bg-secondary">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-50 frame">
+          <h2 class="text-serif aligncenter">
+            THE END
+          </h2>
+          <h4>More Stuff</h4>
+
+          <ul>
+            <li>
+              <a href="https://syntax.fm/">https://syntax.fm/</a>
+            </li>
+            <li>
+              <a href="https://georgiancollege.sharepoint.com/sites/go/Pages/Lynda.aspx">Lynda.com</a>
+            </li>
+<li><a href="https://www.youtube.com/watch?v=M3BM9TB-8yA&t=12s">10 Things I Regret About Node.js - Ryan Dahl</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <!-- .wrap = container (width: 90%) -->
+        <div class=" wrap ">
+          <h2 class="alignleft ">
+            <strong>References</strong>
+          </h2>
+        </div>
+        <ol>
+          <li>https://www.youtube.com/watch?v=NBrM7YVznzk</li>
+          <li>https://www.trekk.com/insights/augmented-or-virtual-how-do-you-your-reality</li>
+          <li>https://www.youtube.com/watch?v=VKPyuQsGYeE</li>
+          <li>https://www.youtube.com/watch?v=_7FRNqhKf7I</li>
+          <li>https://www.youtube.com/watch?v=wVOESt-TpSA</li>
+          <li>https://www.digi-capital.com/news/2016/07/virtual-augmented-and-mixed-reality-are-the-4th-wave/</li>
+          <li>https://en.wikipedia.org/wiki/Augmented_reality</li>
+          <li>https://www.youtube.com/watch?v=ZYZYnY-uu10</li>
+          <li>https://www.youtube.com/watch?v=NyZ_dAlNBOI</li>
+        </ol>
+
+        <!-- .end .wrap -->
+      </section>
+
+    </article>
+    <!-- end article -->
+  </main>
+  <!-- end main -->
+
+  <!-- A global footer
+
+     <footer role="contentinfo ">
+      <div class="wrap ">
+        <p>An <a href="https://github.com/webslides/webslides ">open source solution</a>, by <a href="https://twitter.com/webslides ">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+  <!-- Required -->
+  <script src="././static/js/webslides.js "></script>
+  <script>
+    window.ws = new WebSlides();
+  </script>
+
+  <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+  <script defer src="././static/js/svg-icons.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js "></script>
+
+</body>
+
+</html>
