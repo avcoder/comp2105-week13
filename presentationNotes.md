@@ -196,3 +196,80 @@
 # webxr.io
 
 -
+
+# visually update purple page
+
+- topic: Performance
+- If you are going to animate something, you should use these 2 props: transform and opacity
+- whenever the browser has to update its look, it has to do 3 to 4 things:
+- 1. calculate styles
+- 2. layout (Read it)
+- 3. (read it)
+- 4. composite (read it)
+- So when you animate, be aware that some props require going through all of these steps when they're changed, and some don't
+- so the fewer steps the better, more performant
+
+# Performance
+
+- [click link] csstriggers.com
+- this website shows you a comparison of Chrome(blink), Firefox(Gecko), Safari(WebKit), Edge(EdgeHTML)
+- it's showing you the different phases that the browser uses
+- so take the 1st one: align-content; for Chrome it's very expensive if align-content changes
+- how about background-position
+- let's take a look at the best 2: transform here it's only affecting the composite layer, so it's the least amount of work for the browser - which makes it better for performance. For opacity it's 2, or 1 for if it was already changed before
+- so that's something to keep in mind when you're doing animations
+
+# Val Head quote
+
+- read it
+
+# cat codepen exercise
+
+- so with that in mind
+- I want you to optimize this sprite animation
+- To do that I want you to replace the background-position, with a transform
+- instead of having a `<div class="tuna"></div>`, add an img tag then do a transform on that img tag
+
+  1. Create an img tag inside div whose src replaces the background img
+  1. No longer need CSS background prop
+  1. Hide other cats `overflow: hidden` (make it obvious via `border: 1px solid black`)
+  1. Modify keyframe from `background-position` to `transform: translateY(-2400px)`
+  1. remove `animation` statement from .tuna block, paste to new img { animation: ... }
+
+  ```css
+  .tuna {
+    /* use the timing function steps() to chunk the animation into 12 equal pieces */
+    /*   background: url(http://stash.rachelnabors.com/animation-workshop/sprite_catwalk.png) 0 0 no-repeat;  */
+    height: 200px;
+    width: 400px;
+    margin: 100px auto 0;
+    border: 1px solid black;
+    overflow: hidden;
+  }
+
+  img {
+    animation: 1s walk steps(12) infinite;
+  }
+
+  /_ Don't forget: You'll need an @keyframes block to change the background image's position! _/
+
+  @keyframes walk {
+    to { transform: translateY(-2400px) }
+  }
+  ```
+
+# 4 things browser animate cheap
+
+- read it
+- What's the 1 thing missing from that list of transforms?
+- translate3d() is a hack and is replaced by the prop will-change
+
+# youtube vid side-by-side
+
+- this is in slow motion, they recorded it in 240 frames per second
+- so on left side, it's very jerky because browser is expensively calculating everything
+
+# Chrome Devtools
+
+- Performance tab
+- Try Firefox for waterfall
