@@ -11,13 +11,14 @@
 - AR fits in that category of MR, it's just closer to reality side
 - so when you see thru you phone/browser, you see reality, but in addition to reality, you see additional objects that are displayed as well
 - read it
-- field is very new
+- field is relatively new
 
 # Ikea place app
 
 - to show you some examples, Ikea has made this app
 - play video
-- if you download their app, you can see their furniture in their room so you can see how it looks, you can turn it around, change colours
+- if you download their app, you can see their furniture in your room so you can see how it looks on your carpet, you can turn it around, change colours
+- so you're not surprised when you buy their furniture
 - cool example to see if potential furniture fits in your decor
 
 # ar.js - gaming
@@ -51,7 +52,7 @@
 
 - this is a company who annually tracks tech trends
 - they can predict how long it will stabilize in the market, or if it will fall of the face of the earth never to be seen again
-- pick something that's at the peak
+- this is called the hype cycle (for example...)
 - everything on this down slope is on the decline
 - but in order to stabilize in the market it has to reach here - the end of the line
 - where is AR? it's here. that may concern you but it's not dropping of face of earth because if it were it would go down even further
@@ -72,10 +73,12 @@
 - read it
 - this was a bombshell because you didn't require markers anymore - this was the first that had markerless tracking
 - hit testing - means this has the ability thru your phone, it'll scan the ground, it'll know that's the ground, and it'll place your object on the ground, in proportion
-- monocular camera click next slide
+- was available for a monocular camera click next slide
 
 # monocular camera
 
+- thru glasses he's seeing additional info in order to do his job correctly
+- this one was craeted by MS called Hololens
 - all kinds of monocular glasses being created right now
 
 # fast forward to Aug 2017
@@ -95,6 +98,7 @@
 - Google did something nice. They exposed ARCore and ARKit to the web
 - so google created WebARonARCore and WebARonARKit
 - so now those 2 new technologies are open on the web
+  -the following slides are examples
 
 # ARCore example (portal)
 
@@ -120,14 +124,14 @@
 - click link - cool thing is you can turn around, press return to toggle camera,
 - take a look a their hello world - this example is kind of what we'll do in our in-class exercise today
 - take a look at their docs - this is the special markup tags that a-frame has created
-- so basically create a scene and then place objects
+- so basically create a scene via `<a-scene>` and then place objects
 
 # tracking
 
 - there are 5 different kinds of tracking
-- the one you'll play with today is marker tracking, that's when you have a piece of paper and the computer will recognize that piece of paper and orient the object on that paper appropriately
+- the one you'll play with today is marker tracking, that's when you have a piece of paper and the computer will recognize that pattern on that piece of paper and orient the object on that paper appropriately
 - Geo tracking - pokemon
-- face tracking - is totally different than face recognition - face tracking is locating your eyes/nose so you can place objects appropriately
+- face tracking - is totally different than face recognition - face tracking is simpler - it's locating your eyes/nose so you can place objects appropriately
 
 # Intro to ar.js and A-frame
 
@@ -177,13 +181,7 @@
 - try a combo of objects
 - try changing attributes
 - try adding your own image
-
-# three.js
-
-- as I mentioned before, A-frame is built upon three.js
-- click link "Developing with three.js"
-- these A-frame docs tell you how to access three.js within a-frame
-- the magical line is "Accessing the three.js Scene" - something to keep in mind
+- add your initials or name
 
 # Glossary
 
